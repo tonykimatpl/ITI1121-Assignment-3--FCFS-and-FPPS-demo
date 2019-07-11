@@ -1,0 +1,21 @@
+1.
+First come first serve (FCFS) schedulers use queues to manage OS processes.
+The process which is at the front of the queue is sent to the CPU first and is processed.
+This is different from fixed priority pre-emptive scheduling (FPPS), where a priority is assigned to each process.
+The processes are then executed based on their priority, with the highest priority processes being sent to the CPU first.
+Hence, the lower priority processes are pre-empted by processes of higher priority.
+
+2.
+FCFS schedulers can become inefficient when longer processes come before shorter processes, as the shorter processes have to wait for the longer processes to complete first. (Convoy effect)
+This effect is mitigated with FPPS schedulers, as priorities are assigned to each process.
+The only downside to FPPS schedulers is when higher priority processes keep pre-empting the lower priority processes, the lower priority processes have to wait longer before being processed. (Starvation)
+This effect is mitigated with FCFS schedulers, as processes are processed in the order they are given.
+
+3.
+With OSs' operating based on a FCFS scheduler, when a longer process is taking most of the CPU bandwidth, the shorter processes are given less bandwidth which can result in system lag.
+This is why FCFS is rarely seen in modern operating systems and is now only used in smaller systems where I/O efficiency is not important.
+
+4.
+Most modern operating systems operate on a FPPS scheduler, as it allows for greater multitasking capabilities.
+"However, this scheduling scheme is vulnerable to process or thread lockout: since priority is given to higher-priority tasks, the lower-priority tasks could wait an indefinite amount of time. One common method of arbitrating this situation is aging, which gradually increments the priority of waiting processes and threads, ensuring that they will all eventually execute."
+^The above line in quotations is an excerpt from https://en.wikipedia.org/wiki/Fixed-priority_pre-emptive_scheduling"
